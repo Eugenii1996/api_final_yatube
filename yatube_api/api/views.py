@@ -1,8 +1,8 @@
+from django.shortcuts import get_object_or_404
 from rest_framework import filters
 from rest_framework import viewsets
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.permissions import IsAuthenticated
-from django.shortcuts import get_object_or_404
 
 from .permissions import OwnerOrReadOnly
 from .serializers import (
@@ -50,8 +50,7 @@ class FollowViewSet(CreateGetViewSet):
     search_fields = ('following__username',)
 
     def get_queryset(self):
-        user = get_object_or_404(User, username=self.request.user)
-        return user.follower.all()
+        return self.request.user.follower.all()
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
