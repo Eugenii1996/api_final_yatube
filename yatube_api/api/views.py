@@ -9,7 +9,7 @@ from .serializers import (
     CommentSerializer, FollowSerializer, GroupSerializer, PostSerializer
 )
 from .viewsets import CreateGetViewSet
-from posts.models import Group, Post, User
+from posts.models import Group, Post
 
 
 class GroupViewSet(viewsets.ReadOnlyModelViewSet):
