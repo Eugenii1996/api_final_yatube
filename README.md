@@ -1,53 +1,71 @@
 # Проект API социальной сети Yatube
 
+### Разработчик:
+
+ - [Мирошниченко Евгений Игоревич](https://github.com/Eugenii1996)
+
 ### О проекте:
 
-Приложение представляет собой интерфейс для обмена данными социальной сети Yatube.
-Предоставляет клиентам доступ к базе данных.
-Данные передаются в формате JSON.
-В реализации проекта применена архитектура REST API.
+Проект Yatube представляет собой социальную сеть, в которой пользователи имеют возможность создать учетную запись, 
+публиковать записи, подписываться на любимых авторов и отмечать понравившиеся записи.
+В данном проекте реализован интерфейс для обмена данными социальной сети Yatube.
+Он предоставляет клиентам доступ к базе данных. Данные передаются в формате JSON.
 
-### Как запустить проект на Windows:
+Примененные технологии:
+ - Python 3
+ - Django Rest Framework
+ - Git
+ - Pytest
 
-Клонировать репозиторий и перейти в него в командной строке:
+### Клонирование репозитория и переход в него в командной строке:
 
-```
+```bash
 git clone git@github.com:Eugenii1996/api_final_yatube.git
 ```
 
-```
+```bash
 cd api_final_yatube
 ```
 
-Cоздать и активировать виртуальное окружение:
+### Cоздать и активировать виртуальное окружение:
 
-```
-python3.7 -m venv venv
-```
+Виртуальное окружение должно использовать Python 3.7
 
-```
-source venv/Scripts/activate
+```bash
+pyhton -m venv venv
 ```
 
-```
+* Если у вас Linux/MacOS
+
+    ```bash
+    source venv/bin/activate
+    ```
+
+* Если у вас windows
+
+    ```bash
+    source venv/scripts/activate
+    ```
+
+### Установка зависимостей из файла requirements.txt:
+
+```bash
 python -m pip install --upgrade pip
 ```
 
-Установить зависимости из файла requirements.txt:
-
-```
+```bash
 pip install -r requirements.txt
 ```
 
-Выполнить миграции:
+### Выполнить миграции:
 
-```
+```bash
 python manage.py migrate
 ```
 
-Запустить проект:
+### Запуск проекта:
 
-```
+```bash
 python manage.py runserver
 ```
 
@@ -55,7 +73,7 @@ python manage.py runserver
 
 POST-запрос на эндпоинт api/v1/posts/:
 
-```
+```bash
 {
     "text": "string",
     "image": "string",
@@ -96,3 +114,5 @@ GET-запрос на эндпоинт api/v1/posts/{post_id}/comments/ верн
     }
 ]
 ```
+
+Документация к API находится по пути: api_final_yatube/yatube_api/static/redoc.yaml
