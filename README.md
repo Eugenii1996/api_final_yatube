@@ -115,4 +115,4 @@ GET-запрос на эндпоинт api/v1/posts/{post_id}/comments/ верн
 ]
 ```
 
-Документация к API находится по пути: api_final_yatube/yatube_api/static/redoc.yaml
+Документация к API доступна по ссылке http://127.0.0.1:8000/redoc/ после запуска сервера разработчика
